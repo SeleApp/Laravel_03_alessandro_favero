@@ -9,7 +9,7 @@
 <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">Laravel Blog</a>
+            <a class="navbar-brand fw-bold" href="{{ route('home') }}">&#x1F525; Blog della Griglia</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,6 +25,10 @@
     <main class="container mb-5">
         @yield('content')
     </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <small>Blog della Griglia &mdash; Progetto Laravel con Controller &mdash; {{ date('Y') }}</small>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
