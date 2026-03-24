@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\MovieController;
 
-// Homepage: mostra il blog con gli articoli in evidenza
-Route::get('/', [ArticleController::class, 'homepage'])->name('home');
+Route::get('/', [PublicController::class, 'onePage']);
 
-// Pagina indice: elenco di tutti gli articoli
-Route::get('/articoli', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/chi-siamo', [PublicController::class, 'aboutUs']);
 
-// Pagina di dettaglio: singolo articolo identificato dallo slug
-Route::get('/articoli/{slug}', [ArticleController::class, 'show'])->name('articles.show');
+Route::get('/chi-siamo/{id}', [PublicController::class, 'aboutUsDetail']);
+
+Route::get('/movies', [MovieController::class, 'movieList']);
+
+Route::get('/movies/{id}', [MovieController::class, 'movieDetail']);
